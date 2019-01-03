@@ -14,7 +14,7 @@ const {
     addData,
     deleData,
     exitData
-} = require('../../config/db');//引入封装的db库
+} = require('../../config/db');//引入封装的db库..
 
 
 router.get('/selectID', async (ctx) => { // 获取数据
