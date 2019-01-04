@@ -1,4 +1,5 @@
-const router = require('koa-router')()
+const router = require('koa-router')();
+var user = require("./user.js")
 router.prefix('/api');
 
 
@@ -17,7 +18,7 @@ const {
 } = require('../../config/db');//引入封装的db库..。
 
 
-router.get('/selectID', async (ctx) => { // 获取数据
+router.get('/selectID', async (ctx) => { // 根据id获取数据
     console.log(this)
     let res = ctx.query;
     // 返回的数据格式为json
@@ -85,4 +86,5 @@ router.get('/delete', async (ctx) => {
         ctx.body = { err: '数据删除失败' };
     });
 });
+router.use("/user", user.routes())
 module.exports = router;
